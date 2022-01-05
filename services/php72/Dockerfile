@@ -9,7 +9,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #ENV SOURCELIST_FROM=qinghua
 #COPY ./pkg/${SOURCELIST_FROM}_sourcelist /home/sources.list
 #RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak && mv /home/sources.list /etc/apt/
-
+RUN yum remove libzip
+RUN wget https://libzip.org/download/libzip-1.3.2.tar.gz
+RUN tar xvf libzip-1.3.2.tar.gz && cd libzip-1.3.2 && ./configure && make && make install
 # 更新安装依赖包和PHP核心拓展
 RUN apt-get update && apt-get install -y \
         librabbitmq-dev \
