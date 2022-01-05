@@ -12,7 +12,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # 更新安装依赖包和PHP核心拓展
 RUN apt-get update && apt-get install -y \
-        libzip \
+        libzip-dev \
         librabbitmq-dev \
         git \
         procps \
