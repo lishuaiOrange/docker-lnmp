@@ -1,4 +1,4 @@
-FROM php:7.2.27-fpm-buster
+FROM php:7.4-fpm-buster
 MAINTAINER ruby "854006588@qq.com"
 
 # 设置时区
